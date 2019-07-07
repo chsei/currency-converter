@@ -1,0 +1,13 @@
+.Header {
+    font-weight: bold;
+
+    display: flex;
+
+    white-space: nowrap;
+
+    color: #f7f7ff;
+    background-color: #3f826d;
+
+    justify-content: center;
+    align-items: baseline;
+}

@@ -1,3 +1,59 @@
 .App {
-  text-align: center;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+
+    min-height: calc(100vh - 100px);
+    margin: 0;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.converter {
+    min-width: 250px;
+    margin-top: 2rem;
+    padding: 3rem;
+
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.alert {
+    color: #c03221;
+}
+
+.converter__result {
+    font-size: 1.5rem;
+}
+
+.fa.fa-exchange {
+    margin: 0 1rem;
+}
+
+.currency {
+    font-size: .8rem;
+}
+
+.footer {
+    font-size: .9rem;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+
+    height: 50px;
+
+    white-space: nowrap;
+
+    color: #f7f7ff;
+    background-color: #545e75;
+
+    justify-content: center;
+    align-items: center;
 }

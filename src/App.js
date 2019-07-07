@@ -3,6 +3,8 @@ import './App.css';
 
 import moment from 'moment'
 
+import Header from './components/Header'
+
 class App extends Component {
 
   state = {
@@ -97,9 +99,7 @@ class App extends Component {
     const { isLoading, rates, rateUpdate, currentValue, currentConvert, fromCurrency, toCurrency } = this.state
     return (
       <div className="App">
-        <header className="header">
-          <h1>Currency Converter&nbsp;<i className="fa fa-money" aria-hidden="true"></i></h1>
-        </header>
+        <Header />
         <div className="main">
           {
             isLoading ? <p>Loading...</p> :
