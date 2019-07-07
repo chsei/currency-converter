@@ -1,10 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 import moment from 'moment'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Converter from './components/Converter'
 
 class App extends Component {
 
@@ -87,63 +88,31 @@ class App extends Component {
   }
 
   /**
-   * Fetch the data when the component is mounted
+   * Fetch data when the component is mounted
    */
   componentDidMount = () => {
     this.fetchData()
   }
 
-  render() {
+  render(){
     /**
      * Destructuring state
      */
-    const { isLoading, rates, currentValue, currentConvert, fromCurrency, toCurrency } = this.state
+    const { isLoading } = this.state
     return (
       <div className="App">
         <Header />
+        
         <div className="main">
           {
             isLoading ? <p>Loading...</p> :
             
-            // can be moved to a converter component
-            <div className="converter">
+            <Converter 
+              data={this.state}
+              handleSubmit={this.handleSubmit}
+              handleChange={this.handleChange}
+            />
 
-              {this.state.errorOccured ? <p className="alert">an network error has occurred</p>: 
-                <Fragment>
-                  <form onSubmit={this.handleSubmit}>
-                    <p>
-                      <label>Please enter your amount:</label>
-                    </p>
-
-                    <input 
-                      onChange={this.handleChange} 
-                      type="number" 
-                      placeholder="amount" 
-                      name="currentValue" 
-                      min="0"
-                    /> <i className="fa fa-eur"></i>  
-
-                    <p>
-                      <label>Please select your convert currency:</label>
-                    </p>
-
-                    {/** Create select of currencies from rates object */}
-                    <select name="toCurrency" onChange={this.handleChange} value={toCurrency}>
-                      {Object.keys(rates).map(currency => <option key={currency}>{currency}</option>)}
-                    </select>
-                  </form>
-
-                  <hr/>
-
-                  {/* show the result of the convert method */}
-                  <p className="converter__result">
-                    {currentValue} <span className="currency">{fromCurrency}</span>
-                    <i className="fa fa-exchange" aria-hidden="true"></i>
-                    {currentConvert} <span className="currency">{toCurrency}</span>
-                  </p>
-                </Fragment>
-              }
-            </div>
           }
         </div>
         

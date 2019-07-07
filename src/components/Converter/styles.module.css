@@ -1,0 +1,32 @@
+.Converter {
+    min-width: 250px;
+    margin-top: 2rem;
+    padding: 3rem;
+
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.input {
+    height: 1rem;
+}
+
+.hr {
+    margin: 2rem 0;
+}
+
+.alert {
+    color: #c03221;
+}
+
+.result {
+    font-size: 1.5rem;
+}
+
+.currency {
+    font-size: .8rem;
+}
+
+.exchange {
+    margin: 0 1rem;
+}
