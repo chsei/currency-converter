@@ -4,6 +4,7 @@ import './App.css';
 import moment from 'moment'
 
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 class App extends Component {
 
@@ -96,7 +97,7 @@ class App extends Component {
     /**
      * Destructuring state
      */
-    const { isLoading, rates, rateUpdate, currentValue, currentConvert, fromCurrency, toCurrency } = this.state
+    const { isLoading, rates, currentValue, currentConvert, fromCurrency, toCurrency } = this.state
     return (
       <div className="App">
         <Header />
@@ -146,7 +147,7 @@ class App extends Component {
           }
         </div>
         
-        <footer className="footer"><p>latest rates update: {rateUpdate}</p></footer>
+        <Footer info={this.state.rateUpdate} />
       </div>
     );
   }

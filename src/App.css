@@ -36,24 +36,3 @@
 .currency {
     font-size: .8rem;
 }
-
-.footer {
-    font-size: .9rem;
-
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    display: flex;
-
-    height: 50px;
-
-    white-space: nowrap;
-
-    color: #f7f7ff;
-    background-color: #545e75;
-
-    justify-content: center;
-    align-items: center;
-}
